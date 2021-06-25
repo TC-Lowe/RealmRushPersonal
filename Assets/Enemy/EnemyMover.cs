@@ -5,7 +5,7 @@ using UnityEngine;
 public class EnemyMover : MonoBehaviour
 {
     [SerializeField] List<Waypoint> path = new List<Waypoint>();
-    [SerializeField] [Range (0f, 5f)]float speed = 1.0f;
+    [SerializeField] [Range (0f, 5f)] float speed = 1.0f;
 
     // Start is called before the first frame update
     void Start()
