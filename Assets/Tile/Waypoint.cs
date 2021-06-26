@@ -3,16 +3,18 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Waypoint : MonoBehaviour
-{
-    [SerializeField] bool isPlacable = true;
+{    
     [SerializeField] GameObject towerPrefab;
+    [SerializeField] bool isPlaceable = true;
+
+    public bool IsPlaceable { get { return isPlaceable; } }
 
     void OnMouseDown()
     {
-        if(isPlacable)
+        if(isPlaceable)
         {
             PlaceTower();
-            isPlacable = false;
+            isPlaceable = false;
         }
         
         

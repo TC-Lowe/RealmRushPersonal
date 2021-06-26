@@ -11,6 +11,10 @@ PrefabInstance:
       propertyPath: isPlacable
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1002234979820436114, guid: ea2aee8a0c9192f45a0cf39368fef8b8, type: 3}
+      propertyPath: isPlaceable
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4723522304877380978, guid: ea2aee8a0c9192f45a0cf39368fef8b8, type: 3}
       propertyPath: m_Name
       value: RoadStraighV
@@ -58,6 +62,22 @@ PrefabInstance:
     - target: {fileID: 4723522304877380979, guid: ea2aee8a0c9192f45a0cf39368fef8b8, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4723522306530158387, guid: ea2aee8a0c9192f45a0cf39368fef8b8, type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4286611584
+      objectReference: {fileID: 0}
+    - target: {fileID: 4723522306530158387, guid: ea2aee8a0c9192f45a0cf39368fef8b8, type: 3}
+      propertyPath: m_fontColor.r
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4723522306530158387, guid: ea2aee8a0c9192f45a0cf39368fef8b8, type: 3}
+      propertyPath: m_fontColor.g
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4723522306530158387, guid: ea2aee8a0c9192f45a0cf39368fef8b8, type: 3}
+      propertyPath: m_fontColor.b
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 8649435898841478792, guid: ea2aee8a0c9192f45a0cf39368fef8b8, type: 3}
       propertyPath: m_Mesh

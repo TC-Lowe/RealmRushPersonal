@@ -6,11 +6,17 @@ using TMPro;
 [ExecuteAlways]
 public class ComponentLabeler : MonoBehaviour
 {
+    [SerializeField] Color defaultColor = Color.white;
+    [SerializeField] Color blockedColor = Color.gray;
+
     TextMeshPro label;
     Vector2Int coordinates = new Vector2Int();
+    Waypoint waypoint;
+
     void Awake()
     {
         label = GetComponent<TextMeshPro>();
+        waypoint = GetComponentInParent<Waypoint>();
         DisplayCoordinates();
     }
 
@@ -22,8 +28,22 @@ public class ComponentLabeler : MonoBehaviour
             DisplayCoordinates();
             UpdateObjectName();
         }
+
+        ColorCoordinates();
     }
 
+    void ColorCoordinates()
+    {
+        if(waypoint.IsPlaceable)
+        {
+            label.color = defaultColor;
+        }
+        else
+        {
+            label.color = blockedColor;
+        }
+
+    }
     void DisplayCoordinates()
     {
         coordinates.x = Mathf.RoundToInt(transform.parent.position.x / UnityEditor.EditorSnapSettings.move.x);
