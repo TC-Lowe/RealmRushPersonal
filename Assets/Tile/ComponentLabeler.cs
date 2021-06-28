@@ -16,6 +16,7 @@ public class ComponentLabeler : MonoBehaviour
     void Awake()
     {
         label = GetComponent<TextMeshPro>();
+        label.enabled = false;
         waypoint = GetComponentInParent<Waypoint>();
         DisplayCoordinates();
     }
@@ -30,6 +31,16 @@ public class ComponentLabeler : MonoBehaviour
         }
 
         ColorCoordinates();
+        ToggleLabels();
+    }
+
+    void ToggleLabels()
+    {
+        if(Input.GetKeyUp(KeyCode.Z))
+        {
+            Debug.Log("Debug mode enabled.");
+            label.enabled = !label.IsActive();
+        }
     }
 
     void ColorCoordinates()
