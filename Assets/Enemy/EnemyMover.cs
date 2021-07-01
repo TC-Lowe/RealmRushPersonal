@@ -6,6 +6,7 @@ public class EnemyMover : MonoBehaviour
 {
     [SerializeField] List<Waypoint> path = new List<Waypoint>();
     [SerializeField] [Range (0f, 5f)] float speed = 1.0f;
+    Enemy enemy;
 
     // Start is called before the first frame update
     void OnEnable()
@@ -14,6 +15,11 @@ public class EnemyMover : MonoBehaviour
         ReturnToStart();
         StartCoroutine(FollowPath());
         
+    }
+
+    private void Start()
+    {
+        enemy = GetComponent<Enemy>();
     }
 
     void FindPath()
@@ -30,6 +36,7 @@ public class EnemyMover : MonoBehaviour
     void ReturnToStart()
     {
         transform.position = path[0].transform.position;
+        
     }
 
     IEnumerator FollowPath()
@@ -50,6 +57,7 @@ public class EnemyMover : MonoBehaviour
             }
             
         }
+        enemy.StealGold();
         gameObject.SetActive(false);
     }
 }
