@@ -4,33 +4,23 @@ using UnityEngine;
 
 public class Waypoint : MonoBehaviour
 {    
-    [SerializeField] GameObject towerPrefab;
-    [SerializeField] bool isPlaceable = true;
-    [SerializeField] int placeCost = 50;
-    //Bank bank;
+    [SerializeField] Tower towerPrefab;
+    [SerializeField] bool isPlaceable = true;    
+
 
     public bool IsPlaceable { get { return isPlaceable; } }
-
-    //private void Start()
-    //{
-    //    bank = FindObjectOfType<Bank>();
-    //}
 
     void OnMouseDown()
     {
         if(isPlaceable)
         {
-            PlaceTower();
-            isPlaceable = false;
+            bool isPlaced = towerPrefab.CreateTower(towerPrefab, transform.position);
+            isPlaceable = !isPlaced;
         }
         
         
     }
 
-    void PlaceTower()
-    {
-        Instantiate(towerPrefab, transform.position, Quaternion.identity);
-        //bank.Withdraw(placeCost);
-    }
+   
 
 }
